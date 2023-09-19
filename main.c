@@ -9,7 +9,9 @@ int main()
     while (1)
     {
 	    write(STDOUT_FILENO, "#cisfun$ ", 9);
-	    if (take_cmd(prmpt) == 0)
+	   int size_ofchar_read = take_cmd(prmpt);
+	  
+	   if (take_cmd(prmpt) == 0)
 	    {
 		    continue;
 	    }
