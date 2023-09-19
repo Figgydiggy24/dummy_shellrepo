@@ -20,3 +20,7 @@ char *ptr = destination;
 size_t cust_strlen(const char *inpstr);
 int c_strcmp(const char *1st, const char *2st);
 char *concat_str(char *destination, const char *source);
+char *find_executable(char *cmd)
+void my_mem_cpy(char *dest, const char *src, size_t n)
+char *_custgetenv(char *argname)
+extern char **environ

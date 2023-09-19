@@ -35,3 +35,28 @@ while (*1st != '\0' && *2st != '\0') {
     }
     return (*1st - *2st);
 }
+
+char *c_str_chr(const char *string, int character)
+
+{
+if (str == NULL)
+{
+return NULL;
+}
+return strchr(str, character);
+}
+
+char *c_strdu_p(const char *string) 
+{
+    if (string == NULL) 
+{
+perror("Value is NULL");
+exit(1); // Handle memory allocation error gracefully
+}
+char *val = strdup(str); // Allocate memory and copy the value
+if (val == NULL)
+{
+perror("Memory allocation failed");
+exit(1); // Handle memory allocation error gracefully
+}
+return val;

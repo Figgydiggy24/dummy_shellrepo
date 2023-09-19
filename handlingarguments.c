@@ -1,41 +1,4 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <unistd.h>
-#include <string.h>
-#include <sys/wait.h>
-
-#define MAX_DISPLAY_LENGTH 100
-#define MAXIMUM_COMMAND 100
-
-// Declare the function prototypes before main
-int take_cmd(char *prmpt);
-void exec_prmpt(char *command_line);
-
-int main()
-{
-    char prmpt[MAX_DISPLAY_LENGTH];
-    while (1)
-    {
-        write(STDOUT_FILENO, "#cisfun$ ", 9);
-        if (take_cmd(prmpt) == 0)
-        {
-            continue;
-        }
-
-        // Remove the trailing newline character
-        prmpt[strlen(prmpt) - 1] = '\0';
-
-        if (strcmp(prmpt, "exit") == 0)
-        {
-            // Exit the shell if the user enters "exit"
-            break;
-        }
-
-        exec_prmpt(prmpt);
-    }
-
-    return 0;
-}
+#include <shell.h>
 
 int take_cmd(char *prmpt)
 {
@@ -79,14 +42,14 @@ void exec_prmpt(char *command_line)
         cmd[cmdval] = NULL; // Null-terminate the argument list
 
         char *path = "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin";
-        char *token = strtok(path, ":");
-        while (token != NULL)
+        char *tokn = strtok(path, ":");
+        while (tokn != NULL)
         {
-            char full_path[MAXIMUM_COMMAND];
-            snprintf(full_path, sizeof(full_path), "%s/%s", token, cmd[0]);
+            char entirepath[MAXIMUM_COMMAND];
+            snprintf(entirepath, sizeof(entirepath), "%s/%s", tokn, cmd[0]);
 
             // Execute the command in the child process
-            if (execve(full_path, cmd, NULL) >= 0)
+            if (execve(enitrepath, cmd, NULL) >= 0)
             {
                 // Print an error message if the executable is not found
                 perror("Command not found");
