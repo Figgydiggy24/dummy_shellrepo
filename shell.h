@@ -18,5 +18,5 @@ char *ptr = destination;
 
 //for string related functions//
 size_t cust_strlen(const char *inpstr);
-int cust_strcmp(const char *1st, const char *2st);
+int c_strcmp(const char *1st, const char *2st);
 char *concat_str(char *destination, const char *source);

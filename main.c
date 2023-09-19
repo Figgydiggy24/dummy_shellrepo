@@ -14,9 +14,9 @@ int main()
             continue;
         }
 
-        prmpt[strlen(prmpt) - 1] = '\0';
+        prmpt[cust_strlen(prmpt) - 1] = '\0';
 
-        if (strcmp(prmpt, "exit") == 0)
+        if (c_strcmp(prmpt, "exit") == 0)
         {
             break;
         }
