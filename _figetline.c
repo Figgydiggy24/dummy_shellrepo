@@ -1,8 +1,4 @@
-#include <stdio.h>
-#include <stdlib.h>
-
-#define _originalbuffersize 200
-#define g_f 4
+#include "shell.h"
 
 ssize_t getline(char **l_ptr, size_t *q, FILE *stream)
 {
